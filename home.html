@@ -1,1 +1,181 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HS-BD - Home</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Roboto, sans-serif;
+        }
 
+        body {
+            background-color: #0f1015;
+            color: #fff;
+            padding-bottom: 70px;
+        }
+
+        /* হেডার */
+        header {
+            background: #1a1c29;
+            padding: 15px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 1px solid #2a2d3d;
+        }
+
+        .user-info h3 {
+            font-size: 16px;
+            color: #ffd700;
+        }
+
+        .user-info p {
+            font-size: 12px;
+            color: #aaa;
+        }
+
+        .login-btn {
+            background: linear-gradient(135deg, #d4af37, #ff8c00);
+            color: #000;
+            padding: 8px 16px;
+            border-radius: 20px;
+            font-weight: bold;
+            text-decoration: none;
+            font-size: 13px;
+        }
+
+        /* ব্যানার সেকশন */
+        .banner {
+            margin: 15px;
+            padding: 20px;
+            background: linear-gradient(135deg, #1e2235, #252a40);
+            border-radius: 12px;
+            border: 1px solid #d4af37;
+            text-align: center;
+        }
+
+        .banner h2 {
+            color: #ffd700;
+            font-size: 20px;
+            margin-bottom: 8px;
+        }
+
+        .banner p {
+            color: #ccc;
+            font-size: 13px;
+        }
+
+        /* সার্ভিস বক্স */
+        .services {
+            padding: 15px;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 12px;
+        }
+
+        .card {
+            background: #1a1c29;
+            padding: 15px;
+            border-radius: 10px;
+            text-align: center;
+            border: 1px solid #2a2d3d;
+        }
+
+        .card .icon {
+            font-size: 28px;
+            margin-bottom: 8px;
+        }
+
+        .card h4 {
+            font-size: 14px;
+            color: #fff;
+        }
+
+        /* বটম নেভিগেশন বার */
+        .bottom-nav {
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+            background: #1a1c29;
+            display: flex;
+            justify-content: space-around;
+            padding: 10px 0;
+            border-top: 1px solid #2a2d3d;
+        }
+
+        .nav-item {
+            color: #888;
+            text-decoration: none;
+            font-size: 12px;
+            text-align: center;
+        }
+
+        .nav-item.active {
+            color: #ffd700;
+        }
+
+        .nav-item div {
+            font-size: 18px;
+            margin-bottom: 2px;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- হেডার -->
+    <header>
+        <div class="user-info">
+            <h3>HS-BD অ্যাপে স্বাগতম</h3>
+            <p>স্ট্যাটাস: গেস্ট ইউজার</p>
+        </div>
+        <a href="#" class="login-btn">লগইন</a>
+    </header>
+
+    <!-- মূল ব্যানার -->
+    <div class="banner">
+        <h2>🔥 বিশেষ অফার!</h2>
+        <p>HS-BD-এর সাথে যুক্ত থাকুন এবং সেরা সার্ভিস উপভোগ করুন।</p>
+    </div>
+
+    <!-- সার্ভিস সেকশন -->
+    <div class="services">
+        <div class="card">
+            <div class="icon">📱</div>
+            <h4>সার্ভিস ১</h4>
+        </div>
+        <div class="card">
+            <div class="icon">🎁</div>
+            <h4>অফারসমূহ</h4>
+        </div>
+        <div class="card">
+            <div class="icon">💬</div>
+            <h4>সাপোর্ট</h4>
+        </div>
+        <div class="card">
+            <div class="icon">⚙️</div>
+            <h4>সেটিংস</h4>
+        </div>
+    </div>
+
+    <!-- ফুটার মেনু -->
+    <div class="bottom-nav">
+        <a href="#" class="nav-item active">
+            <div>🏠</div>
+            হোম
+        </a>
+        <a href="#" class="nav-item">
+            <div>📊</div>
+            ড্যাশবোর্ড
+        </a>
+        <a href="#" class="nav-item">
+            <div>👤</div>
+            প্রোফাইল
+        </a>
+    </div>
+
+</body>
+</html>
