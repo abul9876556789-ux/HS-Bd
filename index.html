@@ -1,1 +1,187 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HS-BD</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Roboto, sans-serif;
+        }
 
+        body {
+            background: radial-gradient(circle at center, #1a1c29 0%, #0d0e15 100%);
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            align-items: center;
+            padding: 40px 20px;
+            color: white;
+            overflow: hidden;
+        }
+
+        /* হেল্প বা কাস্টমার সাপোর্ট আইকন */
+        .top-bar {
+            width: 100%;
+            display: flex;
+            justify-content: flex-end;
+        }
+
+        .help-btn {
+            background: rgba(255, 215, 0, 0.1);
+            border: 1px solid rgba(255, 215, 0, 0.5);
+            border-radius: 50%;
+            width: 42px;
+            height: 42px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 20px;
+            box-shadow: 0 0 12px rgba(255, 215, 0, 0.3);
+            cursor: pointer;
+        }
+
+        /* ৩ডি গোল্ডেন লোগো ও ব্র্যান্ডিং */
+        .logo-container {
+            text-align: center;
+            margin-top: auto;
+            margin-bottom: auto;
+        }
+
+        .logo-box {
+            width: 150px;
+            height: 150px;
+            margin: 0 auto 20px;
+            background: linear-gradient(135deg, #bf953f, #fcf6ba, #b38728, #fbf5b7);
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            box-shadow: 0 0 35px rgba(212, 175, 55, 0.6), inset 0 0 15px rgba(0,0,0,0.6);
+            border: 4px solid #fff8dc;
+            animation: pulse 2s infinite ease-in-out;
+        }
+
+        .logo-text-inner {
+            font-size: 40px;
+            font-weight: 900;
+            color: #1a1c29;
+            letter-spacing: 2px;
+        }
+
+        .app-title {
+            font-size: 34px;
+            font-weight: 900;
+            background: linear-gradient(to bottom, #ffe600, #ffaa00);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            text-transform: uppercase;
+            letter-spacing: 4px;
+            text-shadow: 0 4px 15px rgba(0,0,0,0.6);
+        }
+
+        /* লোডিং প্রোগ্রেস বার */
+        .loading-section {
+            width: 100%;
+            max-width: 300px;
+            text-align: center;
+            margin-bottom: 25px;
+        }
+
+        .progress-box {
+            width: 100%;
+            height: 20px;
+            background: rgba(0, 0, 0, 0.7);
+            border: 2px solid #d4af37;
+            border-radius: 12px;
+            padding: 2px;
+            position: relative;
+            overflow: hidden;
+            box-shadow: 0 0 15px rgba(212, 175, 55, 0.3);
+        }
+
+        .progress-fill {
+            height: 100%;
+            width: 0%;
+            background: linear-gradient(90deg, #ff7b00, #ffd700);
+            border-radius: 8px;
+            transition: width 0.04s linear;
+            box-shadow: 0 0 10px #ffd700;
+        }
+
+        .percentage-text {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            font-size: 11px;
+            font-weight: bold;
+            color: #fff;
+            text-shadow: 1px 1px 2px #000;
+        }
+
+        .footer-text {
+            font-size: 10px;
+            color: rgba(255, 255, 255, 0.35);
+            letter-spacing: 1px;
+        }
+
+        @keyframes pulse {
+            0% { transform: scale(1); box-shadow: 0 0 25px rgba(212, 175, 55, 0.4); }
+            50% { transform: scale(1.05); box-shadow: 0 0 45px rgba(212, 175, 55, 0.8); }
+            100% { transform: scale(1); box-shadow: 0 0 25px rgba(212, 175, 55, 0.4); }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- সাপোর্ট আইকন -->
+    <div class="top-bar">
+        <div class="help-btn">🎧</div>
+    </div>
+
+    <!-- ৩ডি লোগো -->
+    <div class="logo-container">
+        <div class="logo-box">
+            <span class="logo-text-inner">HS</span>
+        </div>
+        <h1 class="app-title">HS-BD</h1>
+    </div>
+
+    <!-- লোডিং বার -->
+    <div class="loading-section">
+        <div class="progress-box">
+            <div class="progress-fill" id="progress-fill"></div>
+            <span class="percentage-text" id="percentage">0%</span>
+        </div>
+    </div>
+
+    <!-- ফুটার -->
+    <div class="footer-text">
+        &copy; 2026 HS-BD CORPORATION. ALL RIGHTS RESERVED.
+    </div>
+
+    <script>
+        let percent = 0;
+        const fill = document.getElementById('progress-fill');
+        const text = document.getElementById('percentage');
+
+        const interval = setInterval(() => {
+            percent += 1;
+            fill.style.width = percent + '%';
+            text.innerText = percent + '%';
+
+            if (percent >= 100) {
+                clearInterval(interval);
+                setTimeout(() => {
+                    window.location.href = 'home.html';
+                }, 300);
+            }
+        }, 30);
+    </script>
+</body>
+</html>
